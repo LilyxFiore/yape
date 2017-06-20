@@ -1,0 +1,106 @@
+/** Screen 1 - Welcome**/
+*{
+  box-sizing: border-box;
+  font-family: Roboto,sans-serif;
+}
+
+body{
+  margin: auto;
+  text-align: center;
+}
+
+.container{
+  width: 90%;
+  margin: auto;
+}
+
+.btn-registrarme{
+  background-color: #fbd43b ;
+  color: white;
+  border: 0;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+  font-size: 28px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+h1{
+  color: #212121;
+}
+
+h2{
+  color: #8f8f8f;
+  line-height: 35px;
+}
+
+/** Screen 2**/
+.container-medium{
+  margin: 40px auto;
+  width: 80%;
+}
+
+.img-center{
+  width: 50%;
+}
+
+input[type=text]{
+  display: inline-block;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-right: 20%;
+  width: 60%;
+  border: 0;
+  outline: 0;
+  font-size: 18px;
+  color: #212121;
+  text-align: center;
+  font-weight: bold;
+}
+
+.img-input{
+  width: 20%;
+}
+
+
+.content-input{
+  width: 100%;
+  border-bottom: 1px solid grey;
+  margin: 20px 0;
+}
+
+.content-checkbox{
+  text-align: left;
+  font-size: 18px;
+  color: #8f8f8f;
+}
+input[type="checkbox"]{
+  margin: 10px 10px 0 0;
+  -webkit-appearance: none;
+  border: 1px solid #b5b6b7;
+  padding: 10px;
+  outline: 0;
+  background-color: white;
+}
+
+input[type="checkbox"]:checked{
+  background-color: #00c3a3;
+  color: white;
+}
+
+a{
+  color: #00c3a3;
+}
+
+.btn-medium{
+  display: block;
+  background-color: #fbd43b ;
+  color: white;
+  border: 0;
+  margin: auto;
+  padding: 10px;
+  font-size: 28px;
+  margin-top: 50px;
+  border-radius: 5px;
+}
