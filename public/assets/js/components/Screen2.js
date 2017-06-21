@@ -1,12 +1,14 @@
+'use strict';
+
 const Screen2 = (update)=>{
   const container = $('<div class="container-medium"></div>');
   const title = $('<img src="assets/img/icons/phone.png" alt="phone" class="img-center"><h1>Para comenzar validemos tu número</h1><h2>Recibirás un sms con un código de validación</h2>');
   const contentInput = $('<div class="content-input"><img src="assets/img/icons/phoneandnumber.png" alt="number phone" class="img-input"></div>');
-  const inputPhone = $('<input type="text" id="phone" class="input-phone" title="Número celular no válido" maxlength="9">');
+  const inputPhone = $('<input type="text" maxlength="9" class="input-phone">');
   const contentCheckbox = $('<div class="content-checkbox"></div>');
-  const inputCheck = $('<input type="checkbox" id="check">Acepto los <a href="#">Términos y condiciones</a>');
+  const inputCheck = $('<input type="checkbox">Acepto los <a href="#">Términos y condiciones</a>');
   const message = $('<p class="message"></p>');
-  const btnContinuar = $('<button id="btn-continuar" class="btn-medium" disabled>Continuar</button>');
+  const btnContinuar = $('<button class="btn-medium" disabled>Continuar</button>');
 
   container.append(title);
   container.append(contentInput);
@@ -24,22 +26,16 @@ const Screen2 = (update)=>{
     }
   });
 
-  inputPhone.keyup( _=> {
-    if(inputPhone.val().charAt(0) == 9){
-      message.text('');
-    }
-    else{
-      message.text('El número debe empezar con 9');
-    }
-  });
-
-  inputPhone.keydown((e) => {
-    if( e.key >= 0 && e.key <= 9 ||  e.keyCode === 8){
-      message.text('');
-    }
-    else{
-      message.text('Sólo números');
-      return false;
+  inputPhone.on({
+    keyup: function () {
+      if(inputPhone.val().charAt(0) == 9){ message.text(''); }
+      else{ message.text('El número debe empezar con 9'); }
+    },
+    keydown: function (e) {
+      if( e.keyCode >= 48 && e.keyCode <= 57 ||  e.keyCode === 8){
+        message.text('');      }
+      else{message.text('Sólo números'); return false;
+      }
     }
   });
 

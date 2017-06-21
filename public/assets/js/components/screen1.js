@@ -2,7 +2,7 @@
 
 const Screen1 = (update) =>{
   const contentScreen = $('<div class="container"></div>');
-  const owlCarousel = $('<div class="owl-carousel owl-theme"></div>');
+  const owlCarousels = $('<div class="owl-carousel owl-theme"></div>');
   const item1 = $('<div class="item"><img src="assets/img/icons/icon-people.png" alt="people">' +
       '<h1>Paga a tus amigos</h1><h2 class="text">Paga a quien quiere desde donde quieras, sin usar efectivo.</h2></div>');
   const item2 = $('<div class="item"><img src="assets/img/icons/happy-person.png" alt="happy person">' +
@@ -11,19 +11,19 @@ const Screen1 = (update) =>{
       '<h2 class="text">La transferencia es inmediata y gratuita de una cuenta a otra.</h2></div>');
   const btnRegistrame = $('<button class="btn-registrarme">REGISTRARME</button>');
 
-  owlCarousel.append(item1);
-  owlCarousel.append(item2);
-  owlCarousel.append(item3);
 
-  owlCarousel.owlCarousel({loop:true, margin:10, nav:true, responsive: {0: {items:1}, 600: {items:1}}});
+  owlCarousels.append(item1);
+  owlCarousels.append(item2);
+  owlCarousels.append(item3);
+  contentScreen.html(owlCarousels);
+  owlCarousels.owlCarousel({loop:true, margin:10, nav:true, responsive: {0: {items:1}, 600: {items:1}}});
+
 
   btnRegistrame.on('click', _=>{
     status.screen = 2;
     update();
   });
 
-
-  contentScreen.append(owlCarousel);
   contentScreen.append(btnRegistrame);
   return contentScreen;
 };

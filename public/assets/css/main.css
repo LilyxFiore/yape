@@ -27,11 +27,11 @@ body{
 }
 
 h1{
-  color: #212121;
+  color: #38052a;
 }
 
 h2{
-  color: #8f8f8f;
+  color:  #8f8f8f;
   line-height: 35px;
 }
 
@@ -45,29 +45,34 @@ h2{
   width: 50%;
 }
 
-input[type=text]{
-  display: inline-block;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  padding-right: 20%;
-  width: 80%;
-  border: 0;
-  outline: 0;
-  font-size: 18px;
-  color: #212121;
-  text-align: center;
-  font-weight: bold;
+.content-input{
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  border-bottom: 1px solid grey;
+  margin: 20px 0;
+  padding: 10px 0;
 }
 
 .img-input{
   width: 20%;
+  margin-left: 6%;
 }
 
+input{
+  display: inline-block;
+  padding-top: 20px;
+  border: 0;
+  outline: 0;
+  font-size: 18px;
+  color: #49233b;
+  text-align: center;
+  font-weight: bold;
+}
 
-.content-input{
-  width: 100%;
-  border-bottom: 1px solid grey;
-  margin: 20px 0;
+.input-phone{
+  padding-right: 20%;
+  width: 74%;
 }
 
 .content-checkbox{
@@ -75,6 +80,7 @@ input[type=text]{
   font-size: 18px;
   color: #8f8f8f;
 }
+
 input[type="checkbox"]{
   margin: 10px 10px 0 0;
   -webkit-appearance: none;
@@ -97,7 +103,7 @@ a{
 
 .btn-medium{
   display: block;
-  background-color: #fbd43b ;
+  background-color: #fbd43b;
   color: white;
   border: 0;
   margin: auto;
@@ -113,4 +119,62 @@ a{
 
 .message{
   color: goldenrod;
+}
+
+/** Screen 3 **/
+span{
+  color: #49233b;
+}
+
+input[type=password], .input-form{
+  width: 91%;
+  padding-right: 7%;
+}
+
+.img-lock{
+  margin-left: 6%;
+  width: 7%;
+}
+
+.container-clock{
+  height: 20px;
+  padding-bottom: 2px;
+  font-size: 20px;
+}
+
+.container-clock img{
+  height: 100%;
+  margin: 0 4px;
+}
+
+/** Screen 4 **/
+.name{
+  text-transform: capitalize;
+}
+
+.email{
+  text-transform: lowercase;
+}
+
+/** Screen 5 **/
+.bg-yellow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fbd43b;
+  margin: auto;
+  padding: 50px;
+}
+
+.bg-yellow img{
+  width: 50%;
+}
+.text-purple{
+  color: #49233b;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 15px 0;
+  margin-bottom: 0;
 }
