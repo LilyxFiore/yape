@@ -14,7 +14,7 @@ const render = (root) => {
 
     case 5: wrapper.append(Screen5()); changeScreen( _=> render(root)); break;
 
-    case 6: wrapper.append(Screen6()); break;
+  //  case 6: wrapper.append(Screen6()); break;
   }
   root.append(wrapper);
 };
