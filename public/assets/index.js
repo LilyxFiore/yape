@@ -4,15 +4,13 @@ const render = (root) => {
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
   if(status.screen == 0){
-    wrapper.html(Screen1(_=>render(root)));
+    wrapper.append(Screen1( _=>render(root) ));
     root.append(wrapper);
   }
   if(status.screen == 1){
-    wrapper.append(Screen2());
+    wrapper.append(Screen2( _=>render(root) ));
   }
-
   root.append(wrapper);
-
 };
 
 const status = {
@@ -21,10 +19,6 @@ const status = {
 };
 
 $(_ => {
- // $.post("api/RegisterNumber", {phone: "9183456l36", terms: true}, function(result){
- //   console.log(result);    // result.data.code
- //   status.user = result;
-    const root = $('.root');
-    render(root);
- // });
+  const root = $('.root');
+  render(root);
 });
