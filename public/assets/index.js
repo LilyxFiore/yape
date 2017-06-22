@@ -27,7 +27,7 @@ const render = (root) => {
 };
 
 const status = {
-  screen: 8,
+  screen: 1,
   user: null,
   cardUser: null
 };
