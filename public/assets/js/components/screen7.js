@@ -3,7 +3,7 @@
 const Screen7 = (update)=>{
   const container = $('<div class="container-medium"></div>');
   const title = $('<img src="assets/img/icons/bcp-logo.png" alt="card" class="img-center"><h2>Registra tu tarjeta de débito BCP</h2>' +
-      '<h3>Ingresa la clave de tu tarjeta</h3>');
+      '<h3>Ingresa la clave de tu tarjeta **** ' + status.user.card.substr(-3) + '</h3>');
   const form = $('<form></form>');
   const contentInput = $('<div class="content-input"><img src="assets/img/icons/lock.png" alt="lock" class="img-lock"></div>');
   const inputPassCard = $('<input type="password" maxlength="5" class="input-pass" placeholder=". . . . . ">');

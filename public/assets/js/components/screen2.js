@@ -40,10 +40,14 @@ const Screen2 = (update)=>{
       }
       if(inputPhone.val().length == 9 &&  $(inputCheck).is(':checked') ){
         btnContinuar.removeAttr("disabled");
-        message.text('');
       }
       else{
         btnContinuar.attr("disabled", "false");
+      }
+      if(inputPhone.val().length == 9){;
+        message.text('');
+      }
+      else{
         message.text('Debe tener 9 números');
       }
     },
@@ -58,6 +62,7 @@ const Screen2 = (update)=>{
   btnContinuar.click(function () {
     if(inputPhone.val().length == 9){
       checkUser(inputPhone.val(), true, message, update);
+      message.text('');
     }
     else{
       message.text('Número no válido: Son 9 números');
