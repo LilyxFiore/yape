@@ -9,6 +9,7 @@ const Screen2 = (update)=>{
   const inputCheck = $('<input type="checkbox">Acepto los <a href="#">Términos y condiciones</a>');
   const message = $('<p class="message"></p>');
   const message2 = $('<p class="message"></p>');
+  const message3 = $('<p class="message"></p>');
   const btnContinuar = $('<button class="btn-medium" disabled>Continuar</button>');
 
   container.append(title);
@@ -18,10 +19,11 @@ const Screen2 = (update)=>{
   container.append(contentCheckbox);
   container.append(message);
   container.append(message2);
+  container.append(message3);
   container.append(btnContinuar);
 
-  inputCheck.on( 'change', function() {
-    if( $(this).is(':checked') ) {
+  inputCheck.on( 'change keypress', function() {
+    if( $(this).is(':checked') && inputPhone.val().length == 9 ) {
       btnContinuar.removeAttr("disabled");
     } else {
       btnContinuar.attr("disabled", "false");
@@ -31,15 +33,17 @@ const Screen2 = (update)=>{
   inputPhone.on({
     keyup: function () {
       if(inputPhone.val().charAt(0) == 9){
+        message3.text('');
+      }
+      else{
+        message3.text('El número debe empezar con 9');
+      }
+      if(inputPhone.val().length == 9 &&  $(inputCheck).is(':checked') ){
+        btnContinuar.removeAttr("disabled");
         message.text('');
       }
       else{
-        message.text('El número debe empezar con 9');
-      }
-      if(inputPhone.val().length == 9){
-        message.text('');
-      }
-      else{
+        btnContinuar.attr("disabled", "false");
         message.text('Debe tener 9 números');
       }
     },
