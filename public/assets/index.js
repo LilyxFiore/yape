@@ -4,7 +4,7 @@ const render = (root) => {
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
   switch (status.screen){
-    case 1: wrapper.append(Screen1( _=>render(root) )); break;
+    case 1: wrapper.html(Screen1( _=>render(root) )); break;
 
     case 2: wrapper.append(Screen2( _=>render(root) )); break;
 
@@ -12,17 +12,22 @@ const render = (root) => {
 
     case 4: wrapper.append(Screen4( _=>render(root) )); break;
 
-    case 5: wrapper.append(Screen5()); changeScreen( _=> render(root)); break;
+    case 5: wrapper.append(Screen5());
+            changeScreen( _=> render(root));
+            wrapper.addClass("bg-yellow");
+            break;
 
-  //  case 6: wrapper.append(Screen6()); break;
+    case 6: wrapper.append(Screen6(_=> render(root))); break;
+
+    case 7: wrapper.append(Screen7(_=> render(root))); break;
   }
-  root.append(wrapper);
+  root.html(wrapper);
 };
 
 const status = {
-  screen: 5,
+  screen: 1,
   user: null,
-  timer: null
+  cardUser: null
 };
 
 $(_ => {

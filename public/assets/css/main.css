@@ -26,13 +26,22 @@ body{
   border-radius: 5px;
 }
 
-h1{
+h1,h2{
   color: #38052a;
 }
 
-h2{
+h3{
   color:  #8f8f8f;
   line-height: 35px;
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: auto;
 }
 
 /** Screen 2**/
@@ -158,14 +167,7 @@ input[type=password], .input-form{
 
 /** Screen 5 **/
 .bg-yellow{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
   background-color: #fbd43b;
-  margin: auto;
-  padding: 50px;
 }
 
 .bg-yellow img{
@@ -177,4 +179,30 @@ input[type=password], .input-form{
   font-weight: bold;
   margin: 15px 0;
   margin-bottom: 0;
+}
+
+/** Screen 6**/
+.input-date{
+  margin-left: 10px;
+  width: 20%;
+  color: #49233b;
+  border-bottom: 1px solid grey;
+  padding: 6px 10px;
+}
+
+.m-top-20{
+  padding-top: 20px;
+}
+
+.container-card{
+  margin-top: 20px;
+  padding: 8px;
+  height: 30px;
+}
+.container-card img{
+  height: 100%;
+}
+
+.text-green{
+  color: rgb(0, 195, 163);
 }

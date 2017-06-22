@@ -2,8 +2,8 @@
 
 const Screen4 = (update)=>{
   const container = $('<div class="container-medium"></div>');
-  const title = $('<img src="assets/img/icons/lockone.png" alt="phone" class="img-center"><h1>Crea tu usuario Yape</h1>' +
-      '<h2>Ingressa un nombre, email y clave de usuario<span></h2>');
+  const title = $('<img src="assets/img/icons/lockone.png" alt="phone" class="img-center"><h2>Crea tu usuario Yape</h2>' +
+      '<h3>Ingressa un nombre, email y clave de usuario<span></h3>');
   const form = $('<form></form>');
   const contentInputName = $('<div class="content-input"><img src="assets/img/icons/user.png" alt="user" class="img-lock"></div>');
   const inputName = $('<input type="text" placeholder="Nombre" class="input-form name">');
@@ -46,7 +46,7 @@ const Screen4 = (update)=>{
 
   /** validando email **/
   let emailValid = 0;
-  inputEmail.blur(function() {
+  inputEmail.keyup(function() {
     if($(this).val().trim().length == 0){
       message.text("Debe ingresar su correo electrónico");
     }
@@ -73,7 +73,7 @@ const Screen4 = (update)=>{
 
   /** validando formulario **/
   form.on("change keyup", function () {
-    if(inputName.val().trim().length != 1 && emailValid == 1 && inputPass.val().length == 6) {
+    if(inputName.val().trim().length > 1 && emailValid == 1 && inputPass.val().length == 6) {
       btnCrear.removeAttr("disabled");
     }
     else {

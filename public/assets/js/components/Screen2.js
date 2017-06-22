@@ -2,7 +2,7 @@
 
 const Screen2 = (update)=>{
   const container = $('<div class="container-medium"></div>');
-  const title = $('<img src="assets/img/icons/phone.png" alt="phone" class="img-center"><h1>Para comenzar validemos tu número</h1><h2>Recibirás un sms con un código de validación</h2>');
+  const title = $('<img src="assets/img/icons/phone.png" alt="phone" class="img-center"><h2>Para comenzar validemos tu número</h2><h3>Recibirás un sms con un código de validación</h3>');
   const contentInput = $('<div class="content-input"><img src="assets/img/icons/phoneandnumber.png" alt="number phone" class="img-input"></div>');
   const inputPhone = $('<input type="text" maxlength="9" class="input-phone">');
   const contentCheckbox = $('<div class="content-checkbox"></div>');
