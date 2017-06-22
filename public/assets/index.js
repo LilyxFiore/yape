@@ -20,12 +20,14 @@ const render = (root) => {
     case 6: wrapper.append(Screen6(_=> render(root))); break;
 
     case 7: wrapper.append(Screen7(_=> render(root))); break;
+
+    case 8: wrapper.removeClass("wrapper"); wrapper.html(Screen8(_=> render(root))); break;
   }
   root.html(wrapper);
 };
 
 const status = {
-  screen: 1,
+  screen: 8,
   user: null,
   cardUser: null
 };

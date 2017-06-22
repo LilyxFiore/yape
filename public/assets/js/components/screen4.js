@@ -1,7 +1,7 @@
 'use strict';
 
 const Screen4 = (update)=>{
-  const container = $('<div class="container-medium"></div>');
+  const container = $('<div class="container-medium m-top"></div>');
   const title = $('<img src="assets/img/icons/lockone.png" alt="phone" class="img-center"><h2>Crea tu usuario Yape</h2>' +
       '<h3>Ingressa un nombre, email y clave de usuario<span></h3>');
   const form = $('<form></form>');
@@ -90,7 +90,7 @@ const Screen4 = (update)=>{
 
 const createUser = (name, email, password, update) =>{
   $.post("api/createUser", {
-    phone: status.user.data.phone,
+    phone: status.user.phone,
     name: name,
     email: email,
     password: password
@@ -101,7 +101,9 @@ const createUser = (name, email, password, update) =>{
       message.text(result.message);
     }
     else{
-      status.user = result;
+      status.user.name = result.data.name;
+      status.user.email = result.data.email;
+      status.user.password = result.data.password;
       status.screen = 5;
       update();
     }

@@ -1,13 +1,13 @@
 'use strict';
 
 const Screen6 = (update)=>{
-  const container = $('<div class="container-medium"></div>');
+  const container = $('<div class="container-medium m-top"></div>');
   const title = $('<img src="assets/img/icons/bcp-logo.png" alt="card" class="img-center"><h2>Registra tu tarjeta de débito BCP</h2>' +
       '<h3>Por ahora aceptamos cuentas de ahorro y/o corriente en soles</h3>');
   const form = $('<form></form>');
   const contentInput = $('<div class="content-input"><img src="assets/img/icons/card.png" alt="card" class="img-lock"></div>');
   const inputCard = $('<input type="text" maxlength="16" class="input-pass">');
-  const card = $('<div class="container-card"><img src="assets/img/icons/scan.png" alt=""><span class="text-green"> Escanear tarjeta</span></div>');
+  const card = $('<div class="container-card"><img src="assets/img/icons/scan.png" alt="scan"><span class="text-green"> Escanear tarjeta</span></div>');
   const contentInputDate = $('<div class="m-top-20"><span>Fecha de vencimiento</span></div>');
   const inputMonth = $('<input type="text" maxlength="2" class="input-date" placeholder="Mes"><span> / </span>');
   const inputYear = $('<input type="text" maxlength="2" class="input-date" placeholder="Año">');
@@ -86,11 +86,9 @@ const Screen6 = (update)=>{
 
   btnContinuar.click(function (e) {
     e.preventDefault();
-    status.cardUser = {
-      card: inputCard.val(),
-      month: inputMonth.val(),
-      year: inputYear.val()
-    };
+    status.user.card = inputCard.val();
+    status.user.month = inputMonth.val();
+    status.user.year = inputYear.val();
     status.screen = 7;
     update();
   });

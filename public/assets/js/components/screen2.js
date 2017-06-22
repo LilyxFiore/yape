@@ -57,7 +57,11 @@ const checkUser = (num,check, message, update) =>{
       message.text(result.message);
     }
     else{
-      status.user = result;   // result.data.code
+      status.user = {
+        code: result.data.code,
+        phone: result.data.phone,
+        terms: result.data.terms
+      }
       status.screen = 3;
       update();
     }

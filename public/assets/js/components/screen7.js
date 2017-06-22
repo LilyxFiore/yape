@@ -40,7 +40,7 @@ const Screen7 = (update)=>{
 
   btnRegistrar.click(function (e) {
     e.preventDefault();
-    status.cardUser.pass = inputPassCard.val();
+    status.user.passCard = inputPassCard.val();
     registerCard(update);
   });
   return container;
@@ -48,11 +48,11 @@ const Screen7 = (update)=>{
 
 const registerCard = (update) =>{
   $.post("api/registerCard", {
-    phone: status.user.data.phone,
-    cardNumber: status.cardUser.card,
-    cardMonth: status.cardUser.month,
-    cardYear: status.cardUser.year,
-    cardPassword: status.cardUser.pass
+    phone: status.user.phone,
+    cardNumber: status.user.card,
+    cardMonth: status.user.month,
+    cardYear: status.user.year,
+    cardPassword: status.user.passCard
   }, function(result) {
     console.log(result);
 

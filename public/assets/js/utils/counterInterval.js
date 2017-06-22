@@ -22,10 +22,10 @@ function stopInterval(Interval){
 }
 
 const reCode = ()=>{
-  $.post("api/resendCode", {phone: status.user.data.phone}, function(result) {
+  $.post("api/resendCode", {phone: status.user.phone}, function(result) {
     console.log(result);
-    status.user.data.code = result.data;
-    $('.message').text("Nuevo Code: " + status.user.data.code);
+    status.user.code = result.data;
+    $('.message').text("Nuevo Code: " + status.user.code);
     counterSeg();
   });
 };
