@@ -8,6 +8,7 @@ const Screen2 = (update)=>{
   const contentCheckbox = $('<div class="content-checkbox"></div>');
   const inputCheck = $('<input type="checkbox">Acepto los <a href="#">Términos y condiciones</a>');
   const message = $('<p class="message"></p>');
+  const message2 = $('<p class="message"></p>');
   const btnContinuar = $('<button class="btn-medium" disabled>Continuar</button>');
 
   container.append(title);
@@ -16,6 +17,7 @@ const Screen2 = (update)=>{
   contentCheckbox.append(inputCheck);
   container.append(contentCheckbox);
   container.append(message);
+  container.append(message2);
   container.append(btnContinuar);
 
   inputCheck.on( 'change', function() {
@@ -28,13 +30,23 @@ const Screen2 = (update)=>{
 
   inputPhone.on({
     keyup: function () {
-      if(inputPhone.val().charAt(0) == 9){ message.text(''); }
-      else{ message.text('El número debe empezar con 9'); }
+      if(inputPhone.val().charAt(0) == 9){
+        message.text('');
+      }
+      else{
+        message.text('El número debe empezar con 9');
+      }
+      if(inputPhone.val().length == 9){
+        message.text('');
+      }
+      else{
+        message.text('Debe tener 9 números');
+      }
     },
     keydown: function (e) {
       if( e.keyCode >= 48 && e.keyCode <= 57 ||  e.keyCode === 8){
-        message.text('');      }
-      else{message.text('Sólo números'); return false;
+        message2.text('');      }
+      else{message2.text('Sólo números'); return false;
       }
     }
   });
