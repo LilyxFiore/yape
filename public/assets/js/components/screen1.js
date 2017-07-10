@@ -2,19 +2,21 @@
 
 const Screen1 = (update) =>{
   const contentScreen = $('<div class="container"></div>');
+  const contentCarousel = $('<div class="carousel"></div>');
   const owlCarousels = $('<div class="owl-carousel owl-theme owl-loaded owl-drag"></div>');
   const item1 = $('<div class="item"><img src="assets/img/icons/icon-people.png" alt="people">' +
-      '<h1>Paga a tus amigos</h1><h3 class="text">Paga a quien quiere desde donde quieras, sin usar efectivo.</h3></div>');
+      '<h3>Paga a tus amigos</h3><p class="text-screen1">Paga a quien quiere desde donde quieras, sin usar efectivo.</p></div>');
   const item2 = $('<div class="item"><img src="assets/img/icons/happy-person.png" alt="happy person">' +
-      '<h1>Sin número de cuenta</h1><h3 class="text">Elige a quién pagar desde tus lista de contactos.</h3></div>');
-  const item3 = $('<div class="item"><img src="assets/img/icons/group-people.png" alt="group people"><h1>Gratis y Seguro</h1>' +
-      '<h3 class="text">La transferencia es inmediata y gratuita de una cuenta a otra.</h3></div>');
+      '<h3>Sin número de cuenta</h3><p class="text-screen1">Elige a quién pagar desde tus lista de contactos.</p></div>');
+  const item3 = $('<div class="item"><img src="assets/img/icons/group-people.png" alt="group people"><h3>Gratis y Seguro</h3>' +
+      '<p class="text-screen1">La transferencia es inmediata y gratuita de una cuenta a otra.</p></div>');
   const btnRegistrame = $('<button class="btn-registrarme">REGISTRARME</button>');
 
   owlCarousels.append(item1);
   owlCarousels.append(item2);
   owlCarousels.append(item3);
-  contentScreen.append(owlCarousels);
+  contentCarousel.append(owlCarousels);
+  contentScreen.append(contentCarousel);
   owlCarousels.owlCarousel({loop:true, margin:10, nav:true, responsive: {0: {items:1}, 600: {items:1}}});
 
   btnRegistrame.on('click', _=>{
