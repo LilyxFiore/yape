@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const Screen1 = (update) =>{
   const contentScreen = $('<div class="container"></div>');
