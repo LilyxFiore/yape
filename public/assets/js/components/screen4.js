@@ -1,9 +1,9 @@
 'use strict';
 
 const Screen4 = (update)=>{
-  const container = $('<div class="container-medium m-top"></div>');
+  const container = $('<div class="container-medium"></div>');
   const title = $('<img src="assets/img/icons/lockone.png" alt="phone" class="img-center"><h2>Crea tu usuario Yape</h2>' +
-      '<h3>Ingressa un nombre, email y clave de usuario<span></h3>');
+      '<h3>Ingresa un nombre, email y clave de usuario<span></h3>');
   const form = $('<form></form>');
   const contentInputName = $('<div class="content-input"><img src="assets/img/icons/user.png" alt="user" class="img-lock"></div>');
   const inputName = $('<input type="text" placeholder="Nombre" class="input-form name">');
@@ -12,7 +12,9 @@ const Screen4 = (update)=>{
   const contentInputPass = $('<div class="content-input"><img src="assets/img/icons/lock.png" alt="lock" class="img-lock"></div>');
   const inputPass = $('<input type="password" maxlength="6" placeholder="Ingresa clave de 6 dígitos">');
   const info = $('<span>Cuida esta clave como oro, es tu acceso a Yape</span>');
-  const message = $('<p class="message"></p>');
+  const message1 = $('<p class="message"></p>');
+  const message2 = $('<p class="message"></p>');
+  const message3 = $('<p class="message"></p>');
   const btnCrear = $('<button class="btn-medium" disabled>CREAR CUENTA</button>');
 
   container.append(title);
@@ -24,23 +26,25 @@ const Screen4 = (update)=>{
   form.append(contentInputPass);
   contentInputPass.append(inputPass);
   container.append(info);
-  container.append(message);
+  container.append(message1);
+  container.append(message2);
+  container.append(message3);
   container.append(btnCrear);
 
   /** validando nombre **/
   inputName.on({
     keydown: function(e){
       if( e.keyCode >= 48 && e.keyCode <= 57){
-        message.text('Solo letras');
+        message1.text('Solo letras');
         return false;
       }
-      else{ message.text(''); }
+      else{ message1.text(''); }
     },
     blur: function(){
       if($(this).val().trim().length == 0){
-        message.text('Ingresar nombre');
+        message1.text('Ingresar nombre');
       }
-      else{ message.text(''); }
+      else{ message1.text(''); }
     }
   });
 
@@ -48,13 +52,14 @@ const Screen4 = (update)=>{
   let emailValid = 0;
   inputEmail.keyup(function() {
     if($(this).val().trim().length == 0){
-      message.text("Debe ingresar su correo electrónico");
+      message2.text("Debe ingresar su correo electrónico");
     }
     else if (!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+(\w{2,4})+$/.test($(this).val()))) {
-      message.text("Correo no válido");
+      emailValid = 0;
+      message2.text("Correo no válido");
     }
-    else{ message.text('');
-          emailValid = 1;
+    else{ message2.text('');
+      emailValid = 1;
     }
   });
 
@@ -66,10 +71,10 @@ const Screen4 = (update)=>{
       }
     },
     blur: function () {
-      if($(this).val().trim().length != 6){message.text("Ingrese su password"); }
-      else{ message.text(""); }
+      if($(this).val().trim().length != 6){message3.text("Ingrese su password"); }
+      else{ message3.text(""); }
     }
-});
+  });
 
   /** validando formulario **/
   form.on("change keyup", function () {
