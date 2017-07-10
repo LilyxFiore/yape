@@ -4,37 +4,6 @@
   font-family: Roboto,sans-serif;
 }
 
-body{
-  margin: auto;
-  text-align: center;
-}
-
-.container{
-  width: 70%;
-  margin: 40px auto;
-}
-
-.btn-registrarme{
-  background-color: #fbd43b ;
-  color: white;
-  border: 0;
-  margin: auto;
-  padding: 10px;
-  width: 100%;
-  font-size: 28px;
-  margin-top: 20px;
-  border-radius: 5px;
-}
-
-h1,h2{
-  color: #38052a;
-}
-
-h3{
-  color:  #8f8f8f;
-  line-height: 35px;
-}
-
 .wrapper{
   display: flex;
   align-items: center;
@@ -42,6 +11,37 @@ h3{
   flex-direction: column;
   height: 100vh;
   margin: auto;
+}
+
+body{
+  border: 1px solid grey;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  text-align: center;
+}
+
+.container{
+  width: 70%;
+}
+
+.btn-registrarme{
+  background-color: #fbd43b ;
+  color: white;
+  border: 0;
+  margin: auto;
+  padding:  8px 5px;
+  width: 100%;
+  font-size: 1.3rem;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+h3{
+  font-weight: bolder;
+}
+.text-screen1{
+  color: #8f8f8f;
 }
 
 /** Screen 2**/
@@ -58,7 +58,7 @@ h3{
   align-items: flex-end;
   width: 100%;
   border-bottom: 1px solid grey;
-  margin: 20px 0;
+  margin: 10px 0;
   padding: 10px 0;
 }
 
@@ -115,6 +115,7 @@ a{
   color: white;
   border: 0;
   margin: auto;
+  padding: 8px 16px;
   padding: 16px;
   font-size: 28px;
   margin-top: 40px;
@@ -194,6 +195,10 @@ input[type=password], .input-form{
   padding-top: 20px;
 }
 
+.pad-left{
+  padding-left: 6%;
+}
+
 .container-card{
   margin-top: 20px;
   padding: 8px;
@@ -213,7 +218,7 @@ input[type=password], .input-form{
 
 /** Screen 8 **/
 .bg-purple-light{
-   background-color: #451e36;
+  background-color: #451e36;
 }
 
 .bg-purple-dark{
@@ -235,6 +240,7 @@ input[type=password], .input-form{
 }
 
 .bottom{
+  width: 100%;
   height: 52%;
   color: gainsboro;
   margin: auto;
@@ -279,7 +285,7 @@ input[type=password], .input-form{
   height: 42%;
   margin: auto;
   margin-top: 7%;
- }
+}
 
 .div-info img{
   height: 100%;
@@ -287,4 +293,22 @@ input[type=password], .input-form{
 
 .button-img img{
   height: 50%;
+}
+
+@media (min-width: 768px){
+  body{
+    width: 42%;
+  }
+}
+
+@media (min-width: 992px){
+  body{
+    width: 35%;
+  }
+}
+
+@media (min-width: 1200px){
+  body{
+    width: 25%;
+  }
 }
